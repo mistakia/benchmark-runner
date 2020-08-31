@@ -1,15 +1,12 @@
 #!/usr/bin/env node
 
-const gc = require('expose-gc/function')
-gc()
-
 /* global process */
 const benchmarks = require(process.cwd() + '/benchmarks')
 const { start } = require('./index')
 
 const yargs = require('yargs')
 const argv = yargs
-  .usage('IPFS Log benchmark runner\n\nUsage: node --expose-gc $0 [options]')
+  .usage('IPFS Log benchmark runner\n\nUsage: node $0 [options]')
   .version(false)
   .help('help').alias('help', 'h')
   .options({

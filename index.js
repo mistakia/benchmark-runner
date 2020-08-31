@@ -1,3 +1,6 @@
+const gc = require('expose-gc')
+global.gc()
+
 const fs = require('fs')
 const os = require('os')
 
@@ -24,10 +27,6 @@ const start = async (benchmarks, argv) => {
 
   // process.stdout.write(`Running ${baselineOnly ? 'baseline ' : ''}benchmarks matching: ${grep}`)
   // process.stdout.write('\n')
-
-  if (!global.gc) {
-    console.warn('start with --expose-gc')
-  }
 
   try {
     for (const benchmark of benchmarks) {
